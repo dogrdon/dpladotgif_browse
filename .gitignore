@@ -9,3 +9,5 @@ instance/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# virtualenv
+.venv
