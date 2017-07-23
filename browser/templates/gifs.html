@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div>
+    <p class="lead">{{gif_count}} Gifs returned</p>
+    <table class="table table-condensed table-striped">
+      <thead>
+        <th>Image</th>
+        <th>Provider</th>
+        <th>Title</th>
+        <th>Search Term</th>
+      </thead>
+      <tbody>
+        {% for gif in gifs %}
+        <tr>
+          <td><img src="{{aws_base}}{{gif.gif_loc}}" width="150"/></td>
+          <td>{{gif.provider}}</td>
+          <td><a href="">{{gif.title}}</a></td>
+          <td>{{gif.search_term}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% import "macros.jnj" as common %}
+  {% if nav_offsets and nav_path -%}
+    {{ common.display_nav(nav_offsets, nav_path, gif_count)|safe }}
+  {% endif -%}
+{% endblock %}

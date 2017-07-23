@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div>
+    <p class="lead">Brought to you by: ...</p>
+    <table class="table">
+<thead>
+        <th>Image</th>
+        <th>Provider</th>
+        <th>Title</th>
+        <th>Search Term</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="{{aws_base}}{{gif.img}}" width="150"/></td>
+          <td>{{gif.provider}}</td>
+          <td><a href="">{{gif.title}}</a></td>
+          <td>{{gif.search_term}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
